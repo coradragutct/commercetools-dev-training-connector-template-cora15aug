@@ -13,7 +13,12 @@ const create = async (resource: Resource) => {
   const updateActions: Array<UpdateAction> = [];
 
   // TODO: Create the UpdateAction Object to return it to the client
+  const updateAction: UpdateAction = {
+    action: 'setCustomerNumber',
+    customerNumber: String(Math.floor(1000 + Math.random() * 900)), // 0 - 10k
+  };
 
+  updateActions.push(updateAction);
 
   return { statusCode: 201, actions: updateActions };
 };
